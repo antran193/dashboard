@@ -1,0 +1,8 @@
+<app-header (toggle)="togglemenu($event)"></app-header>
+<div class="ng-content">
+    <p-sidebar [(visible)]="display" [modal]="false" [showCloseIcon] ="false" [style]="{width:'15em'}">
+        <app-menu></app-menu>
+    </p-sidebar>
+    
+    <!-- <router-outlet></router-outlet> -->
+</div>

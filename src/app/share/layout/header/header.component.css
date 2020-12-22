@@ -1,0 +1,14 @@
+.header{
+    height: 50px;
+    width: 100%;
+    /* background-color: rgb(147, 147, 245); */
+    /* position:fixed; */
+}
+.toggle-menu{
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
