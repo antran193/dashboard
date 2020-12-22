@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Image } from '../layout/menu/menucontent/galleriaauto/image';
 
 @Injectable({
   providedIn: 'root'
