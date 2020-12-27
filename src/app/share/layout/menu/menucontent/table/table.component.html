@@ -12,8 +12,8 @@ currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" 
             <th></th>
         </tr>
     </ng-template>
-    <ng-template pTemplate="body">
-        <tr *ngFor="let row of datas">
+    <ng-template pTemplate="body" let-row>
+        <tr>
             <td>
                 <p-tableCheckbox [value]="row"></p-tableCheckbox>
             </td>

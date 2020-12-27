@@ -136,8 +136,13 @@ export class MenuComponent implements OnInit {
       },
       {
         label: 'Table',
-        icon: 'pi pi-fw pi-file',
+        icon: 'pi pi-fw pi-table',
         routerLink: '/table'
+      },
+      {
+        label: 'Galleria',
+        icon: 'pi pi-fw pi-image',
+        routerLink: '/galleria'
       },
       {
         separator: true

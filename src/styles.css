@@ -24,8 +24,5 @@ html,body{
 .p-tieredmenu .p-menuitem-link:focus{
     border-radius: 4px;
 }
-.routeroutlet{
-    margin-left: 15em;
-    padding: 10px;
-}
+
 

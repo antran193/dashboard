@@ -4,7 +4,7 @@ import { GalleriaautoComponent } from './menu/menucontent/galleriaauto/galleriaa
 import { TableComponent } from './menu/menucontent/table/table.component';
 
 const routes: Routes = [{
-  path: 'aa' , component : GalleriaautoComponent
+  path: 'galleria' , component : GalleriaautoComponent
 },
 {
   path: 'table' , component : TableComponent
