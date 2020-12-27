@@ -13,14 +13,16 @@ export class TableComponent implements OnInit {
   datas: DataModel[] = [];
   first = 0;
   rows = 5;
+  display = true;
   constructor(private http: HttpClient, private dataservice: DataserviceService) { }
 
   ngOnInit(): void {
-
+    
     this.dataservice.getdata().subscribe((datahttp: DataModel[]) => {
       this.keydata = Object.keys(datahttp[0]);
       this.datas = datahttp;
       console.log(this.datas);
+      this.display = false;
     })
   }
   next() {

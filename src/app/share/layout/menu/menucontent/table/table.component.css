@@ -25,5 +25,10 @@ button{
 }
 button:hover{
     cursor: pointer;
-
+}
+.spin{
+    position: absolute;
+    z-index: 2;
+    left: 55%;
+    top: 45%;
 }

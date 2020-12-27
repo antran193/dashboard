@@ -145,6 +145,16 @@ export class MenuComponent implements OnInit {
         routerLink: '/galleria'
       },
       {
+        label: 'Splitter',
+        icon: 'pi pi-fw pi-image',
+        routerLink: '/splitter'
+      },
+      {
+        label: 'Cascadeselect',
+        icon: 'pi pi-fw pi-image',
+        routerLink: '/cascadeselect'
+      },
+      {
         separator: true
       },
       {

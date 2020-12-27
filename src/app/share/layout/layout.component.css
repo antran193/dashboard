@@ -1,4 +1,6 @@
 .outlet{
     margin-left: 15em;
     padding: 10px;
+    height: 100%;
+    /* overflow-y: auto; */
 }

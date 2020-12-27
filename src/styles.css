@@ -7,10 +7,11 @@ html,body{
 }
 .ng-main{
     height: 100%;
-    overflow-y: hidden;
+    overflow-y: auto;
 }
 .ng-content{
     overflow-y: auto;
+    max-height: 90%;
 }
 .p-sidebar-left{
     top: 50px !important;

@@ -1,12 +1,11 @@
-<p-galleria [(value)]="images" [responsiveOptions]="responsiveOptions" [containerStyle]="{'max-width': '640px'}"
-    [numVisible]="5">
-    <ng-template pTemplate="item" let-item>
-        <img [src]="item.previewImageSrc" style="width: 100%;" />
-    </ng-template>
-    <ng-template pTemplate="thumbnail" let-item>
-        <div class="p-grid p-nogutter p-justify-center">
-            <img [src]="item.thumbnailImageSrc" />
-        </div>
-    </ng-template>
+<p-galleria [(value)]="images" [responsiveOptions]="responsiveOptions" [containerStyle]="{'max-with': '640px','max-height': '480px'}" [numVisible]="5" [circular]="true"
+        [autoPlay]="true" [transitionInterval]="2000"> 
+        <ng-template pTemplate="item" let-item>
+            <img [src]="item.previewImageSrc" style="width: 640px; display: block; height: 480px;" />
+        </ng-template>
+        <ng-template pTemplate="thumbnail" let-item>
+            <div class="p-grid p-nogutter p-justify-center">
+                <img [src]="item.thumbnailImageSrc" style="display: block; height: 64px;" />
+            </div>
+        </ng-template>
 </p-galleria>
-<h1>dada</h1>
