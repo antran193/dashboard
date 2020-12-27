@@ -1,0 +1,28 @@
+
+<div class="card">
+    <p-table #dt [value]="datas" [rows]="rows" [showCurrentPageReport]="true" [paginator] ="true" [(first)]="first" 
+ [rowHover]="true" 
+currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [showCurrentPageReport]="true">
+    <ng-template pTemplate="header" >
+        <tr>
+            <th style="width: 3rem">
+                <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+            </th>
+            <th *ngFor="let item of keydata">{{item}}</th>
+            <th></th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body">
+        <tr *ngFor="let row of datas">
+            <td>
+                <p-tableCheckbox [value]="row"></p-tableCheckbox>
+            </td>
+            <td *ngFor="let col of keydata">{{row[col]}}</td>
+            <td>
+                <button  (click)="editProduct(product)"><i class="pi pi-pencil"></i></button>
+                <button  (click)="deleteProduct(product)"><i class="pi pi-trash "></i></button>
+            </td>
+        </tr>
+    </ng-template>
+</p-table>
+</div>

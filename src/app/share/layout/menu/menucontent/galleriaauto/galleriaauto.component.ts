@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {GalleriaModule} from 'primeng/galleria';
+
 import { PhotoserviceService } from 'src/app/share/service/photoservice.service';
 
 @Component({

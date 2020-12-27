@@ -1,0 +1,29 @@
+.pi-pencil{
+    height: 30px;
+    width: 30px;
+    color: white;
+    background-color: #689f38;
+    border-radius: 50%;
+    padding-top: 7px;
+}
+.pi-trash{
+    height: 30px;
+    width: 30px;
+    color: black;
+    background-color: #fbc02d;
+    border-radius: 50%;
+    padding-top: 7px;
+}
+button{
+    border: none;
+    height: 30px;
+    width: 30px;
+    margin-left: 5px;
+    padding: 0;
+    border-radius: 50%;
+
+}
+button:hover{
+    cursor: pointer;
+
+}

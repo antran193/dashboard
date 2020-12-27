@@ -18,6 +18,14 @@ html,body{
 .p-tieredmenu{
     border: 0 !important;
 }
+.p-tieredmenu .p-menuitem-link .p-menuitem-icon{
+    color: rgb(144, 185, 238) !important;
+}
 .p-tieredmenu .p-menuitem-link:focus{
     border-radius: 4px;
 }
+.routeroutlet{
+    margin-left: 15em;
+    padding: 10px;
+}
+

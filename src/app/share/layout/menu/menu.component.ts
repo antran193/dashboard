@@ -135,12 +135,18 @@ export class MenuComponent implements OnInit {
         ]
       },
       {
+        label: 'Table',
+        icon: 'pi pi-fw pi-file',
+        routerLink: '/table'
+      },
+      {
         separator: true
       },
       {
         label: 'Quit',
         icon: 'pi pi-fw pi-power-off'
-      }
+      },
+
     ];
   }
 

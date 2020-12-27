@@ -9,14 +9,17 @@ import {TieredMenuModule} from 'primeng/tieredmenu';
 import { GalleriaautoComponent } from './menu/menucontent/galleriaauto/galleriaauto.component';
 import {GalleriaModule} from 'primeng/galleria';
 import { LayoutRoutingModule } from './layout-routing.module';
+import { TableComponent } from './menu/menucontent/table/table.component';
+import {TableModule} from 'primeng/table';
+
 
 @NgModule({
   declarations: [
     LayoutComponent,
     HeaderComponent,
     MenuComponent,
-    GalleriaautoComponent
-    
+    GalleriaautoComponent,
+    TableComponent
   ],
   imports: [
     CommonModule,
@@ -24,7 +27,9 @@ import { LayoutRoutingModule } from './layout-routing.module';
     PanelMenuModule,
     TieredMenuModule,
     GalleriaModule,
-    LayoutRoutingModule
+    LayoutRoutingModule,
+    TableModule,
+
   ]
 })
 export class LayoutModule { }
