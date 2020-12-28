@@ -8,14 +8,20 @@ import {TableModule} from 'primeng/table';
 import { SplitterComponent } from './menu/menucontent/splitter/splitter.component';
 import {ProgressSpinnerModule} from 'primeng/progressspinner';
 import { CascadeselectComponent } from './menu/menucontent/cascadeselect/cascadeselect.component';
-import { CascadeSelectModule } from 'primeng/cascadeselect';
-
+import {CascadeSelectModule} from 'primeng/cascadeselect';
+import { ChartComponent } from './menu/menucontent/chart/chart.component';
+import { BarComponent } from './menu/menucontent/chart/bar/bar.component';
+import {ChartModule} from 'primeng/chart';
+import { DoughnutchartComponent } from './menu/menucontent/chart/doughnutchart/doughnutchart.component';
 @NgModule({
   declarations: [
     GalleriaautoComponent,
     TableComponent,
     SplitterComponent,
-    CascadeselectComponent
+    CascadeselectComponent,
+    ChartComponent,
+    BarComponent,
+    DoughnutchartComponent
   ],
   imports: [
     CommonModule,
@@ -23,7 +29,8 @@ import { CascadeSelectModule } from 'primeng/cascadeselect';
     LayoutRoutingModule,
     TableModule,
     ProgressSpinnerModule,
-    CascadeSelectModule
+    CascadeSelectModule,
+    ChartModule
   ],
   exports: [
   ]

@@ -155,6 +155,11 @@ export class MenuComponent implements OnInit {
         routerLink: '/cascadeselect'
       },
       {
+        label: 'Chart',
+        icon: 'pi pi-fw pi-chart-bar',
+        routerLink: '/chart'
+      },
+      {
         separator: true
       },
       {
