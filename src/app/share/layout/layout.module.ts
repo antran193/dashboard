@@ -13,6 +13,14 @@ import { ChartComponent } from './menu/menucontent/chart/chart.component';
 import { BarComponent } from './menu/menucontent/chart/bar/bar.component';
 import {ChartModule} from 'primeng/chart';
 import { DoughnutchartComponent } from './menu/menucontent/chart/doughnutchart/doughnutchart.component';
+import { YourguardComponent } from './menu/menucontent/yourguard/yourguard.component';
+import { LineComponent } from './menu/menucontent/chart/line/line.component';
+import { RadarComponent } from './menu/menucontent/chart/radar/radar.component';
+import { SplitterModule } from 'primeng/splitter';
+import {GMapModule} from 'primeng/gmap';
+import { GgmaproadComponent } from './menu/menucontent/splitter/ggmaproad/ggmaproad.component';
+
+
 @NgModule({
   declarations: [
     GalleriaautoComponent,
@@ -21,7 +29,11 @@ import { DoughnutchartComponent } from './menu/menucontent/chart/doughnutchart/d
     CascadeselectComponent,
     ChartComponent,
     BarComponent,
-    DoughnutchartComponent
+    DoughnutchartComponent,
+    YourguardComponent,
+    LineComponent,
+    RadarComponent,
+    GgmaproadComponent
   ],
   imports: [
     CommonModule,
@@ -30,7 +42,10 @@ import { DoughnutchartComponent } from './menu/menucontent/chart/doughnutchart/d
     TableModule,
     ProgressSpinnerModule,
     CascadeSelectModule,
-    ChartModule
+    ChartModule,
+    SplitterModule,
+    GMapModule
+
   ],
   exports: [
   ]

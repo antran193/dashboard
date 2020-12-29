@@ -1,1 +1,4 @@
-<p>cascadeselect works!</p>
+<div class="containerselect"> 
+    <p-cascadeSelect [(ngModel)]="selectedCity1" [options]="countries" optionLabel="cname" optionGroupLabel="name" placeholder="Select a City"
+    [optionGroupChildren]="['states', 'cities']" [style]="{'minWidth': '14rem'}"></p-cascadeSelect>
+</div>
