@@ -19,7 +19,11 @@ import { RadarComponent } from './menu/menucontent/chart/radar/radar.component';
 import { SplitterModule } from 'primeng/splitter';
 import {GMapModule} from 'primeng/gmap';
 import { GgmaproadComponent } from './menu/menucontent/splitter/ggmaproad/ggmaproad.component';
-
+import {ToastModule} from 'primeng/toast';
+import { MessagesComponent } from './menu/menucontent/messages/messages.component';
+import { ToastComponent } from './menu/menucontent/toast/toast.component';
+import {MessagesModule} from 'primeng/messages';
+import { MessageModule } from 'primeng/message';
 
 @NgModule({
   declarations: [
@@ -33,7 +37,9 @@ import { GgmaproadComponent } from './menu/menucontent/splitter/ggmaproad/ggmapr
     YourguardComponent,
     LineComponent,
     RadarComponent,
-    GgmaproadComponent
+    GgmaproadComponent,
+    MessagesComponent,
+    ToastComponent
   ],
   imports: [
     CommonModule,
@@ -44,7 +50,10 @@ import { GgmaproadComponent } from './menu/menucontent/splitter/ggmaproad/ggmapr
     CascadeSelectModule,
     ChartModule,
     SplitterModule,
-    GMapModule
+    GMapModule,
+    ToastModule,
+    MessageModule,
+    MessagesModule
 
   ],
   exports: [

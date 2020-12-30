@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 import { MenuItem } from 'primeng/api';
 
@@ -45,26 +46,18 @@ export class MenuComponent implements OnInit {
         ]
       },
       {
-        label: 'Edit',
+        label: 'Messages',
         icon: 'pi pi-fw pi-pencil',
         items: [
           {
-            label: 'Left',
-            icon: 'pi pi-fw pi-align-left'
+            label: 'Message',
+            icon: 'pi pi-fw pi-align-left',
+            routerLink: '/messages'
           },
           {
-            label: 'Right',
+            label: 'Toast',
             icon: 'pi pi-fw pi-align-right'
           },
-          {
-            label: 'Center',
-            icon: 'pi pi-fw pi-align-center'
-          },
-          {
-            label: 'Justify',
-            icon: 'pi pi-fw pi-align-justify'
-          },
-
         ]
       },
       {
