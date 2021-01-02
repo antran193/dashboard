@@ -24,6 +24,11 @@ import { MessagesComponent } from './menu/menucontent/messages/messages.componen
 import { ToastComponent } from './menu/menucontent/toast/toast.component';
 import {MessagesModule} from 'primeng/messages';
 import { MessageModule } from 'primeng/message';
+import { ButtonModule } from 'primeng/button';
+import { CardModule } from 'primeng/card';
+import { ToolbarModule } from 'primeng/toolbar';
+import {DialogModule} from 'primeng/dialog';
+
 
 @NgModule({
   declarations: [
@@ -53,7 +58,11 @@ import { MessageModule } from 'primeng/message';
     GMapModule,
     ToastModule,
     MessageModule,
-    MessagesModule
+    MessagesModule,
+    ButtonModule,
+    CardModule,
+    ToolbarModule,
+    DialogModule
 
   ],
   exports: [

@@ -56,7 +56,8 @@ export class MenuComponent implements OnInit {
           },
           {
             label: 'Toast',
-            icon: 'pi pi-fw pi-align-right'
+            icon: 'pi pi-fw pi-align-right',
+            routerLink: '/toast'
           },
         ]
       },

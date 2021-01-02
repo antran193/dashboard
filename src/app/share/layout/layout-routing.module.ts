@@ -7,6 +7,7 @@ import { GalleriaautoComponent } from './menu/menucontent/galleriaauto/galleriaa
 import { MessagesComponent } from './menu/menucontent/messages/messages.component';
 import { SplitterComponent } from './menu/menucontent/splitter/splitter.component';
 import { TableComponent } from './menu/menucontent/table/table.component';
+import { ToastComponent } from './menu/menucontent/toast/toast.component';
 import { YourguardComponent } from './menu/menucontent/yourguard/yourguard.component';
 
 const routes: Routes = [{
@@ -26,6 +27,9 @@ const routes: Routes = [{
 },
 {
   path: 'messages', component: MessagesComponent
+},
+{
+  path: 'toast', component: ToastComponent
 },
 {
   path: '/test-guard',
