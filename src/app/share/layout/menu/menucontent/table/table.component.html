@@ -48,7 +48,7 @@
                 <td>{{data.password}}</td>
                 <td>{{data.token}}</td>
                 <td>
-                    <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2" (click)="editProduct(product)"></button>
+                    <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2" (click)="editData(data)"></button>
                     <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning" (click)="deleteProduct(product)"></button>
                 </td>
             </tr>
@@ -62,30 +62,36 @@
 </div>
 <p-dialog [(visible)]="userDialog" [style]="{width: '450px'}" header="User Details" [modal]="true" styleClass="p-fluid">
     <ng-template pTemplate="content">
-        <div class="p-field">
-            <label for="id">ID</label>
-            <input type="text" pInputText id="id" [(ngModel)]="data.id" required autofocus />
-            <small class="p-invalid" *ngIf="submitted && !data.id">id is required.</small>
+        <div class="p-col-12 p-md-12 p-field">
+            <div class="p-inputgroup">
+                <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+                <input type="text" pInputText id="username" [(ngModel)]="data.username"  required autofocus style="width: 300px;">   
+                <small class="p-invalid" *ngIf="submitted && !data.username">UserName is required.</small>      
+            </div>
+        </div>
+        <div class="p-col-12 p-md-12 p-field">
+            <div class="p-inputgroup">
+                <span class="p-inputgroup-addon"><i class="pi pi-key"></i></span>
+                <input type="text" pInputText id="password" [(ngModel)]="data.password" placeholder="Password" required autofocus  style="width: 300px;">   
+                <small class="p-invalid" *ngIf="submitted && !data.password">Password is required.</small>     
+            </div>
+        </div>  
+        <div class="p-col-12 p-md-12 p-field">
+            <div class="p-inputgroup">
+                <span class="p-inputgroup-addon"><i class="pi pi-unlock"></i></span>
+                <input type="text" pInputText id="token" [(ngModel)]="data.token" placeholder="Token" required autofocus  style="width: 300px;">   
+                <small class="p-invalid" *ngIf="submitted && !data.token">Token is required.</small>    
+            </div>
         </div>
         <div class="p-field">
-            <label for="username">Username</label>
+            <label for="username">Name</label>
             <input type="text" pInputText id="username" [(ngModel)]="data.username" required autofocus />
-            <small class="p-invalid" *ngIf="submitted && !data.username">UserName is required.</small>
+            <small class="p-invalid" *ngIf="submitted && !data.username">Name is required.</small>
         </div>
-        <div class="p-field">
-            <label for="password">Password</label>
-            <input type="text" pInputText id="password" [(ngModel)]="data.password" required autofocus />
-            <small class="p-invalid" *ngIf="submitted && !data.password">Password is required.</small>
-        </div>
-        <div class="p-field">
-            <label for="token">Token</label>
-            <input type="text" pInputText id="token" [(ngModel)]="data.token" required autofocus />
-            <small class="p-invalid" *ngIf="submitted && !data.id">Token is required.</small>
-        </div>   
     </ng-template>
     <ng-template pTemplate="footer">
-        <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text" (click)="hideDialog()"></button>
-        <button pButton pRipple label="Save" icon="pi pi-check" class="p-button-text" (click)="saveProduct()"></button>
+        <button pButton type="button" label="Save" icon="pi pi-check" class="p-button-success" (click)="saveProduct()"></button>
+        <button pButton type="button" label="Cancel" icon="pi pi-times" class="p-button-danger" (click)="hideDialog()"></button>
     </ng-template>
 </p-dialog>
 

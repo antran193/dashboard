@@ -47,6 +47,32 @@ export class TableComponent implements OnInit {
     this.submitted = false;
     this.userDialog = true;
   }
+  editData(data: DataModel) {
+    this.data = { ...data };
+    console.log(this.data);
+    console.log(this.data.username);
+    this.userDialog = true;
+  }
+  findIndexById(id: string): number {
+    let index = -1;
+    for (let i = 0; i < this.datas.length; i++) {
+      if (this.datas[i].id === id) {
+        index = i;
+        break;
+      }
+    }
+
+    return index;
+  }
+
+  createId(): string {
+    let id = '';
+    var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    for (var i = 0; i < 5; i++) {
+      id += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    return id;
+  }
   // next() {
   //   this.first = this.first + this.rows;
   // }
