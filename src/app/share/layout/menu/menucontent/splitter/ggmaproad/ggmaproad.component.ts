@@ -8,11 +8,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ggmaproad.component.css']
 })
 
-export class GgmaproadComponent implements OnInit {
-
-  
-  constructor() {}
-
+export class GgmaproadComponent implements OnInit  {
   ngOnInit() { }
-      
 }

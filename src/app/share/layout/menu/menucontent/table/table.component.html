@@ -14,8 +14,8 @@
             <button pButton pRipple label="Export" icon="pi pi-upload" class="p-button-help"></button>
         </ng-template>
     </p-toolbar>
-    <p-table #dt [value]="datas" [rows]="5" [paginator]="true" [globalFilterFields]="['id','data.username','data.password','data.token']"
-        [(selection)]="selecteddatas" [rowHover]="true" dataKey="id"
+    <p-table #dt [value]="datas" [rows]="5" [paginator]="true" [globalFilterFields]="['index','data.username','data.password','data.token']"
+        [(selection)]="selecteddatas" [rowHover]="true" dataKey="index"
         currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [showCurrentPageReport]="true">
         <ng-template pTemplate="caption">
             <div class="p-d-flex p-ai-center p-jc-between">
@@ -31,7 +31,7 @@
                 <th style="width: 3rem">
                     <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
                 </th>
-                <th pSortableColumn="id">Id <p-sortIcon field="id"></p-sortIcon></th>
+                <th pSortableColumn="index">Index <p-sortIcon field="index"></p-sortIcon></th>
                 <th pSortableColumn="username">Username <p-sortIcon field="username"></p-sortIcon></th>
                 <th pSortableColumn="password">Password <p-sortIcon field="password"></p-sortIcon></th>
                 <th pSortableColumn="token">Token <p-sortIcon field="token"></p-sortIcon></th>
@@ -43,7 +43,7 @@
                 <td>
                     <p-tableCheckbox [value]="data"></p-tableCheckbox>
                 </td>
-                <td>{{data.id}}</td>
+                <td>{{data.index}}</td>
                 <td>{{data.username}}</td>
                 <td>{{data.password}}</td>
                 <td>{{data.token}}</td>
@@ -65,27 +65,27 @@
         <div class="p-col-12 p-md-12 p-field">
             <div class="p-inputgroup">
                 <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
-                <input type="text" pInputText id="username" [(ngModel)]="data.username"  required autofocus style="width: 300px;">   
+                <input type="text" pInputText  [(ngModel)]="data.username"  required autofocus style="width: 300px;">   
                 <small class="p-invalid" *ngIf="submitted && !data.username">UserName is required.</small>      
             </div>
         </div>
         <div class="p-col-12 p-md-12 p-field">
             <div class="p-inputgroup">
                 <span class="p-inputgroup-addon"><i class="pi pi-key"></i></span>
-                <input type="text" pInputText id="password" [(ngModel)]="data.password" placeholder="Password" required autofocus  style="width: 300px;">   
+                <input type="text" pInputText [(ngModel)]="data.password" placeholder="Password" required autofocus  style="width: 300px;">   
                 <small class="p-invalid" *ngIf="submitted && !data.password">Password is required.</small>     
             </div>
         </div>  
         <div class="p-col-12 p-md-12 p-field">
             <div class="p-inputgroup">
-                <span class="p-inputgroup-addon"><i class="pi pi-unlock"></i></span>
-                <input type="text" pInputText id="token" [(ngModel)]="data.token" placeholder="Token" required autofocus  style="width: 300px;">   
+                <span  class="p-inputgroup-addon"><i class="pi pi-unlock"></i></span>
+                <input type="text" pInputText  [(ngModel)]="data.token" placeholder="Token" required autofocus  style="width: 300px;">   
                 <small class="p-invalid" *ngIf="submitted && !data.token">Token is required.</small>    
             </div>
         </div>
         <div class="p-field">
-            <label for="username">Name</label>
-            <input type="text" pInputText id="username" [(ngModel)]="data.username" required autofocus />
+            <label for="data">Name</label>
+            <input type="text" name="username" pInputText [(ngModel)]="data.username" required autofocus />
             <small class="p-invalid" *ngIf="submitted && !data.username">Name is required.</small>
         </div>
     </ng-template>
@@ -97,4 +97,4 @@
 
 
 
-<!-- <p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog> -->
+<p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog>

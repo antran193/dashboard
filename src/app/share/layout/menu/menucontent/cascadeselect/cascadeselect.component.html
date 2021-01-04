@@ -1,5 +1,12 @@
-<!-- <div class="containerselect"> 
-    <p-cascadeSelect [(ngModel)]="selectedCity1" [options]="countries" optionLabel="cname" optionGroupLabel="name" placeholder="Select a City"
-    [optionGroupChildren]="['states', 'cities']" [style]="{'minWidth': '14rem'}"></p-cascadeSelect>
-</div> -->
-<h1>error</h1>
+<div class="containerselect">
+    <p-cascadeSelect [options]="countries" optionLabel="cname" optionGroupLabel="name"
+        [optionGroupChildren]="['states', 'cities']" [style]="{'minWidth': '14rem'}" placeholder="Select a City">
+        <ng-template pTemplate="option" let-option>
+            <div class="country-item">
+                <i class="pi pi-compass p-mr-2" *ngIf="option.cities"></i>
+                <i class="pi pi-map-marker p-mr-2" *ngIf="option.cname"></i>
+                <span>{{option.cname || option.name}}</span>
+            </div>
+        </ng-template>
+    </p-cascadeSelect>
+</div>

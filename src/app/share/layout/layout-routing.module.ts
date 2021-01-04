@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { YourGuardGuard } from '../service/your-guard.guard';
+import { CalendarComponent } from './menu/menucontent/calendar/calendar.component';
 import { CascadeselectComponent } from './menu/menucontent/cascadeselect/cascadeselect.component';
 import { ChartComponent } from './menu/menucontent/chart/chart.component';
 import { GalleriaautoComponent } from './menu/menucontent/galleriaauto/galleriaauto.component';
@@ -30,6 +31,9 @@ const routes: Routes = [{
 },
 {
   path: 'toast', component: ToastComponent
+},
+{
+  path: 'calendar', component: CalendarComponent
 },
 {
   path: '/test-guard',

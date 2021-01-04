@@ -22,7 +22,7 @@ export class TableComponent implements OnInit {
   rows = 5;
   display = true;
   messsc: Message[];
-  constructor(private http: HttpClient, private dataservice: DataserviceService, private confirmationService: ConfirmationService) { }
+  constructor(private http: HttpClient, private dataservice: DataserviceService, private confirmationService: ConfirmationService, private messageService: MessageService) { }
 
   ngOnInit(): void {
 
@@ -30,7 +30,6 @@ export class TableComponent implements OnInit {
       // this.keydata = Object.keys(datahttp[0]);
       this.datas = datahttp;
       console.log(this.datas);
-      console.log(this.data);
       this.display = false;
       this.messsc = [
         { severity: 'success', summary: 'Success', detail: 'Data Table Load Success' },
@@ -51,28 +50,54 @@ export class TableComponent implements OnInit {
     this.data = { ...data };
     console.log(this.data);
     console.log(this.data.username);
+    console.log(this.data.password);
     this.userDialog = true;
   }
-  findIndexById(id: string): number {
-    let index = -1;
-    for (let i = 0; i < this.datas.length; i++) {
-      if (this.datas[i].id === id) {
-        index = i;
-        break;
-      }
-    }
-
-    return index;
+  hideDialog() {
+    this.userDialog = false;
+    this.submitted = false;
   }
 
-  createId(): string {
-    let id = '';
-    var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    for (var i = 0; i < 5; i++) {
-      id += chars.charAt(Math.floor(Math.random() * chars.length));
-    }
-    return id;
-  }
+  // saveProduct() {
+  //   this.submitted = true;
+
+  //   if (this.data.username.trim()) {
+  //     if (this.data.id) {
+  //       this.datas[this.findIndexById(this.data.id)] = this.data;
+  //       this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'data Updated', life: 3000 });
+  //     }
+  //     else {
+  //       this.data.id = this.createId();
+  //       this.datas.push(this.data);
+  //       this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'data Created', life: 3000 });
+  //     }
+
+  //     this.datas = [...this.datas];
+  //     this.userDialog = false;
+  //     this.data = {};
+  //   }
+  // }
+
+  // findIndexById(id: string): number {
+  //   let index = -1;
+  //   for (let i = 0; i < this.datas.length; i++) {
+  //     if (this.datas[i].id === id) {
+  //       index = i;
+  //       break;
+  //     }
+  //   }
+
+  //   return index;
+  // }
+
+  // createId(): string {
+  //   let id = '';
+  //   var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  //   for (var i = 0; i < 5; i++) {
+  //     id += chars.charAt(Math.floor(Math.random() * chars.length));
+  //   }
+  //   return id;
+  // }
   // next() {
   //   this.first = this.first + this.rows;
   // }

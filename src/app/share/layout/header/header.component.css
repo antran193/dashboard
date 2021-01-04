@@ -1,13 +1,14 @@
 .header{
     height: 50px;
     width: 100%;
-
+    border-bottom: rgb(156, 154, 154) 2px solid;
+    display: inline;
 }
 .toggle-menu{
     height: 50px;
-    width: 50px;
+    width: 200px;
     display: flex;
     justify-content: center;
-    align-items: center;
-    
+    align-items: center; 
+    float: left;
 }

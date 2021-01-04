@@ -11,7 +11,7 @@ import { MenuComponent } from './share/layout/menu/menu.component';
 import { SidebarModule } from 'primeng/sidebar';
 import { PanelMenuModule } from 'primeng/panelmenu';
 import { TieredMenuModule } from 'primeng/tieredmenu';
-
+import {TabMenuModule} from 'primeng/tabmenu';
 
 
 
@@ -30,6 +30,7 @@ import { TieredMenuModule } from 'primeng/tieredmenu';
     SidebarModule,
     PanelMenuModule,
     TieredMenuModule,
+    TabMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
