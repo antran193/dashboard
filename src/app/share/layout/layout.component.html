@@ -1,4 +1,4 @@
-<app-header (toggle)="togglemenu($event)"></app-header>
+<app-header (toggle)="togglemenu($event)" (login)="loginform($event)"></app-header>
 <div class="ng-content">
     <p-sidebar [(visible)]="display" [modal]="false" [showCloseIcon] ="false" [style]="{width:'15em'}">
         <app-menu></app-menu>
@@ -8,4 +8,8 @@
         <router-outlet></router-outlet>
     </div>
 </div>
+<p-dialog [(visible)]="displaylogin">
+    <app-login ></app-login>
+</p-dialog> 
+
 

@@ -1,8 +1,12 @@
-<div class="header p-shadow-3">
+<div class="header p-shadow-3 p-d-flex">
     <div class="toggle-menu">
         <i class="pi pi-align-justify" style="font-size: 1.5rem" (click)="togglemenu()"></i>
     </div> 
-    <div>
-        <p-tabMenu [model]="items" ></p-tabMenu>
+    <div >
+        <p-tabMenu [model]="items"></p-tabMenu>
     </div> 
+    <div class="p-ml-auto">
+        <button pButton pRipple type="button" icon="pi pi-user" class="p-button-info p-button-text" label="Login" style="height: 48px;" (click)="loginform()"></button>
+    </div>
 </div>
+<!-- p-d-flex -->

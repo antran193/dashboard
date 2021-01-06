@@ -7,12 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LayoutComponent implements OnInit {
   display: boolean = true;
+  displaylogin: boolean = false;
   constructor() { }
 
   ngOnInit(): void {
   }
   togglemenu($event) {
     this.display = !this.display;
+  }
+  loginform($event) {
+    this.displaylogin = !this.displaylogin;
   }
 
 }

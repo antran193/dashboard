@@ -26,5 +26,8 @@ html,body{
 .p-tieredmenu .p-menuitem-link:focus{
     border-radius: 4px;
 }
+.p-tabmenu-nav{
+    flex-wrap: unset !important;
+}
 
 

@@ -65,10 +65,10 @@ import { FormsModule } from '@angular/forms';
     ButtonModule,
     CardModule,
     ToolbarModule,
-    DialogModule,
     ConfirmDialogModule,
     CalendarModule,
-    FormsModule
+    FormsModule,
+    DialogModule
     // FullCalendarModule
  
 

@@ -9,6 +9,7 @@ import {MenuItem} from 'primeng/api';
 })
 export class HeaderComponent implements OnInit {
   @Output() toggle = new EventEmitter();
+  @Output() login = new EventEmitter();
 
   items: MenuItem[];
   constructor() { }
@@ -25,6 +26,9 @@ export class HeaderComponent implements OnInit {
   togglemenu() {
    
     this.toggle.emit();
+  }
+  loginform() {
+    this.login.emit();
   }
 
 }
