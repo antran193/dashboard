@@ -1,5 +1,5 @@
 export interface DataModel{
-  id?: string;
+  index?: string;
   username?: string;
   password?: string;
 }

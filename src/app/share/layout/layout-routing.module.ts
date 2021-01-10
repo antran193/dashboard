@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LoginComponent } from 'src/app/share/layout/login/login.component';
 import { YourGuardGuard } from '../service/your-guard.guard';
 import { CalendarComponent } from './menu/menucontent/calendar/calendar.component';
 import { CascadeselectComponent } from './menu/menucontent/cascadeselect/cascadeselect.component';
@@ -35,11 +36,19 @@ const routes: Routes = [{
 {
   path: 'calendar', component: CalendarComponent
 },
+
 {
   path: '/test-guard',
   component: YourguardComponent,
   canActivate: [YourGuardGuard],
-}
+},
+// {
+//   path: '/login', component: LoginComponent, children: [
+//     {
+//       path: '', loadChildren: () => import('src/app/login/login.module').then(m => m.LoginModule)
+//     }
+//   ]
+// }
 ]
 
 @NgModule({

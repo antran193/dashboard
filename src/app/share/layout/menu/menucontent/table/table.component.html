@@ -49,7 +49,7 @@
                 <td>{{data.token}}</td>
                 <td>
                     <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2" (click)="editData(data)"></button>
-                    <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning" (click)="deleteProduct(product)"></button>
+                    <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning" (click)="deleteUser(data)"></button>
                 </td>
             </tr>
         </ng-template>
@@ -82,11 +82,6 @@
                 <input type="text" pInputText  [(ngModel)]="data.token" placeholder="Token" required autofocus  style="width: 300px;">   
                 <small class="p-invalid" *ngIf="submitted && !data.token">Token is required.</small>    
             </div>
-        </div>
-        <div class="p-field">
-            <label for="data">Name</label>
-            <input type="text" name="username" pInputText [(ngModel)]="data.username" required autofocus />
-            <small class="p-invalid" *ngIf="submitted && !data.username">Name is required.</small>
         </div>
     </ng-template>
     <ng-template pTemplate="footer">

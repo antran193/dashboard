@@ -25,7 +25,14 @@ export class TableComponent implements OnInit {
   constructor(private http: HttpClient, private dataservice: DataserviceService, private confirmationService: ConfirmationService, private messageService: MessageService) { }
 
   ngOnInit(): void {
+    this.tableupdate();
 
+    setTimeout(() => {
+      this.messsc = [];
+    }, 2000);
+
+  }
+  tableupdate() {
     this.dataservice.getdata().subscribe((datahttp: any) => {
       // this.keydata = Object.keys(datahttp[0]);
       this.datas = datahttp;
@@ -34,11 +41,6 @@ export class TableComponent implements OnInit {
       this.messsc = [
         { severity: 'success', summary: 'Success', detail: 'Data Table Load Success' },
       ];
-      setTimeout(() => {
-        this.messsc = [];
-      }, 2000);
-
-
     })
   }
   openNew() {
@@ -58,37 +60,60 @@ export class TableComponent implements OnInit {
     this.submitted = false;
   }
 
-  // saveProduct() {
-  //   this.submitted = true;
+  saveProduct() {
+    this.submitted = true;
+    for (let i = 0; i < this.datas.length; i++) {
+      if (this.data.index === this.datas[i].index) {
+        this.dataservice.updatedata(this.data).subscribe((res) => {
+          this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'Data Updated', life: 3000 });
+          this.tableupdate();
+        });
+        break;
+      }
+      else {
+        this.dataservice.postdata(this.data).subscribe((res) => {
+          this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'data Created', life: 3000 });
+          this.tableupdate();
 
-  //   if (this.data.username.trim()) {
-  //     if (this.data.id) {
-  //       this.datas[this.findIndexById(this.data.id)] = this.data;
-  //       this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'data Updated', life: 3000 });
-  //     }
-  //     else {
-  //       this.data.id = this.createId();
-  //       this.datas.push(this.data);
-  //       this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'data Created', life: 3000 });
-  //     }
+        })
+        break;
+      }
 
-  //     this.datas = [...this.datas];
-  //     this.userDialog = false;
-  //     this.data = {};
-  //   }
+    }
+    this.userDialog = false;
+    console.log(this.data);
+  }
+  deleteUser(data: DataModel) {
+    // this.data = { ...data };
+    // console.log(this.data);
+    console.log(data);
+    this.confirmationService.confirm({
+      message: ' Are you sure you want to delete the selected users?',
+      header: 'Confirm',
+      icon: 'pi pi-exclamation-triangle',
+      accept: () => { 
+        this.dataservice.deleteuser(data).subscribe((res) => {
+          this.messageService.add({ severity: 'Success', summary: 'successfull', detail: 'Users Delete', life: 3000 });
+          this.tableupdate();
+        })
+      }
+      })
+  }
+  // deleteSelectedusername() {
+  //   this.confirmationService.confirm({
+  //     message: ' Are you sure you want to delete the selected users?',
+  //     header: 'Confirm',
+  //     icon: 'pi pi-exclamation-triangle',
+  //     accept: () => {
+  //       this
+  //       this.products = this.products.filter(val => !this.selectedProducts.includes(val));
+  //       this.selecteddatas = null;
+  //       this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'Users Deleted', life: 3000 });
+  //     }
+  //   })
   // }
 
-  // findIndexById(id: string): number {
-  //   let index = -1;
-  //   for (let i = 0; i < this.datas.length; i++) {
-  //     if (this.datas[i].id === id) {
-  //       index = i;
-  //       break;
-  //     }
-  //   }
 
-  //   return index;
-  // }
 
   // createId(): string {
   //   let id = '';

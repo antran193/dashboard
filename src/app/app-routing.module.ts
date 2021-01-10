@@ -1,26 +1,24 @@
 import { NgModule } from '@angular/core';
 
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './login/login.component';
 import { LayoutComponent } from './share/layout/layout.component';
+import { LoginComponent } from './share/layout/login/login.component';
+import { Guard } from './share/service/authen/authen.guard';
 
 
 
 const routes: Routes = [
   {
-    path: '', component: LayoutComponent, children: [
+    path: '', component: LayoutComponent, canActivate : [Guard], children: [
       {
         path: '', loadChildren: () => import('src/app/share/layout/layout.module').then(m => m.LayoutModule)
       }
     ]
   },
   {
-    path: '', component: LoginComponent, children: [
-      {
-        path: '', loadChildren: () => import('src/app/login/login.module').then(m => m.LoginModule)
-      }
-    ]
-  }
+    path: 'login', component: LoginComponent
+  },
+  
 ]
 
 @NgModule({

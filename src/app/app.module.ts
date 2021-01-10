@@ -14,8 +14,10 @@ import { PanelMenuModule } from 'primeng/panelmenu';
 import { TieredMenuModule } from 'primeng/tieredmenu';
 import {TabMenuModule} from 'primeng/tabmenu';
 import {ButtonModule} from 'primeng/button';
-import { LoginComponent } from './login/login.component';
-
+import { LoginComponent } from './share/layout/login/login.component';
+import {PasswordModule} from 'primeng/password';
+import {InputTextModule} from 'primeng/inputtext';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { LoginComponent } from './login/login.component';
     LayoutComponent,
     HeaderComponent,
     MenuComponent,
-    LoginComponent,
+    LoginComponent
+
   ],
   imports: [
     BrowserModule,
@@ -35,7 +38,10 @@ import { LoginComponent } from './login/login.component';
     TieredMenuModule,
     TabMenuModule,
     ButtonModule,
-    DialogModule
+    DialogModule,
+    PasswordModule,
+    InputTextModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

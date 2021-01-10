@@ -31,6 +31,8 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { CalendarComponent } from './menu/menucontent/calendar/calendar.component';
 import {CalendarModule} from 'primeng/calendar';
 import { FormsModule } from '@angular/forms';
+import { LoginComponent } from 'src/app/share/layout/login/login.component';
+
 
 @NgModule({
   declarations: [
@@ -47,7 +49,8 @@ import { FormsModule } from '@angular/forms';
     GgmaproadComponent,
     MessagesComponent,
     ToastComponent,
-    CalendarComponent
+    CalendarComponent,
+    
   ],
   imports: [
     CommonModule,
