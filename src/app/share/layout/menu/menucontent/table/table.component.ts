@@ -36,7 +36,7 @@ export class TableComponent implements OnInit {
     this.dataservice.getdata().subscribe((datahttp: any) => {
       // this.keydata = Object.keys(datahttp[0]);
       this.datas = datahttp;
-      console.log(this.datas);
+      // console.log(this.datas);
       this.display = false;
       this.messsc = [
         { severity: 'success', summary: 'Success', detail: 'Data Table Load Success' },
@@ -65,14 +65,14 @@ export class TableComponent implements OnInit {
     for (let i = 0; i < this.datas.length; i++) {
       if (this.data.index === this.datas[i].index) {
         this.dataservice.updatedata(this.data).subscribe((res) => {
-          this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'Data Updated', life: 3000 });
+          this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Data Updated', life: 3000 });
           this.tableupdate();
         });
         break;
       }
       else {
         this.dataservice.postdata(this.data).subscribe((res) => {
-          this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'data Created', life: 3000 });
+          this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Data Created', life: 3000 });
           this.tableupdate();
 
         })
@@ -91,14 +91,42 @@ export class TableComponent implements OnInit {
       message: ' Are you sure you want to delete the selected users?',
       header: 'Confirm',
       icon: 'pi pi-exclamation-triangle',
-      accept: () => { 
+      accept: () => {
         this.dataservice.deleteuser(data).subscribe((res) => {
-          this.messageService.add({ severity: 'Success', summary: 'successfull', detail: 'Users Delete', life: 3000 });
+          this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Users Delete', life: 3000 });
           this.tableupdate();
         })
       }
-      })
+    })
   }
+  deleteSelectedusername(selecteddatas) {
+    this.confirmationService.confirm({
+      message: ' Are you sure you want to delete the selected users?',
+      header: 'Confirm',
+      icon: 'pi pi-exclamation-triangle',
+      // accept: () => {
+      //   this.dataservice.deleteselectuser(selecteddatas).subscribe((res) => {
+      //     this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Users Delete', life: 3000 });
+      //     this.tableupdate();
+      //   })
+      // }
+      accept: () => {
+        for (let i = 0; i < this.selecteddatas.length; i++) {
+          this.dataservice.deleteuser(selecteddatas[i]).subscribe(() => {
+
+              this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Users Delete', life: 3000 });
+              this.tableupdate();
+            
+          })
+        }
+
+
+
+      }
+    })
+  }
+
+
   // deleteSelectedusername() {
   //   this.confirmationService.confirm({
   //     message: ' Are you sure you want to delete the selected users?',
