@@ -14,18 +14,23 @@ import { PanelMenuModule } from 'primeng/panelmenu';
 import { TieredMenuModule } from 'primeng/tieredmenu';
 import {TabMenuModule} from 'primeng/tabmenu';
 import {ButtonModule} from 'primeng/button';
-import { LoginComponent } from './share/layout/login/login.component';
+import { LoginComponent } from './share/layout/login/login/login.component';
 import {PasswordModule} from 'primeng/password';
 import {InputTextModule} from 'primeng/inputtext';
 import { FormsModule } from '@angular/forms';
-
+import { ForgetpasswordComponent } from './share/layout/login/forgetpassword/forgetpassword.component';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { ChipModule } from 'primeng/chip';
+import {MessagesModule} from 'primeng/messages';
+import {MessageModule} from 'primeng/message';
 @NgModule({
   declarations: [
     AppComponent,
     LayoutComponent,
     HeaderComponent,
     MenuComponent,
-    LoginComponent
+    LoginComponent,
+    ForgetpasswordComponent
 
   ],
   imports: [
@@ -41,7 +46,11 @@ import { FormsModule } from '@angular/forms';
     DialogModule,
     PasswordModule,
     InputTextModule,
-    FormsModule
+    FormsModule,
+    InputTextareaModule,
+    ChipModule,
+    MessageModule,
+    MessagesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

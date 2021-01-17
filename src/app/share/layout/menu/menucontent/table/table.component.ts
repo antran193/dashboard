@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-
+import { forkJoin } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { DataserviceService } from 'src/app/share/service/dataservice.service';
 import { DataModel } from './datamodel.model';
@@ -39,7 +39,7 @@ export class TableComponent implements OnInit {
       // console.log(this.datas);
       this.display = false;
       this.messsc = [
-        { severity: 'success', summary: 'Success', detail: 'Data Table Load Success' },
+        { severity: 'success', summary: 'Success', detail: 'Data Table Load Success', life: 3000  },
       ];
     })
   }
@@ -104,42 +104,21 @@ export class TableComponent implements OnInit {
       message: ' Are you sure you want to delete the selected users?',
       header: 'Confirm',
       icon: 'pi pi-exclamation-triangle',
-      // accept: () => {
-      //   this.dataservice.deleteselectuser(selecteddatas).subscribe((res) => {
-      //     this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Users Delete', life: 3000 });
-      //     this.tableupdate();
-      //   })
-      // }
       accept: () => {
+        let requestList = [];
         for (let i = 0; i < this.selecteddatas.length; i++) {
-          this.dataservice.deleteuser(selecteddatas[i]).subscribe(() => {
-
-              this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Users Delete', life: 3000 });
-              this.tableupdate();
-            
-          })
+          requestList.push(this.dataservice.deleteuser(selecteddatas[i]));
         }
-
-
-
+        forkJoin(requestList).subscribe(results => {
+          this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Users Delete', life: 3000 });
+          this.tableupdate();
+        });
       }
     })
   }
+  
 
 
-  // deleteSelectedusername() {
-  //   this.confirmationService.confirm({
-  //     message: ' Are you sure you want to delete the selected users?',
-  //     header: 'Confirm',
-  //     icon: 'pi pi-exclamation-triangle',
-  //     accept: () => {
-  //       this
-  //       this.products = this.products.filter(val => !this.selectedProducts.includes(val));
-  //       this.selecteddatas = null;
-  //       this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'Users Deleted', life: 3000 });
-  //     }
-  //   })
-  // }
 
 
 

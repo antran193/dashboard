@@ -29,5 +29,8 @@ html,body{
 .p-tabmenu-nav{
     flex-wrap: unset !important;
 }
+.vertical-container{
+    height: 100%;
+}
 
 

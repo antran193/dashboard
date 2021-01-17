@@ -10,7 +10,7 @@ import { map } from 'rxjs/operators';
 export class AuthenticationService {
   private userSubject: BehaviorSubject<any>;
   public user: Observable<any>;
-  constructor(private http: HttpClient, private router: Router, private route: ActivatedRoute,) {
+  constructor(private http: HttpClient, private router: Router) {
     this.userSubject = new BehaviorSubject<any>(JSON.parse(localStorage.getItem('user')));
     this.user = this.userSubject.asObservable();
   }
@@ -19,19 +19,19 @@ export class AuthenticationService {
     return this.userSubject.value;
   }
   // :Observable<boolean>
-  login(data) {
-    return this.http.post('users/authenticate', data).subscribe(res => {
-        console.log(res);
-        localStorage.setItem('user', JSON.stringify(res));
-        this.userSubject.next(res);
-        // return res;
-        this.router.navigate(['/'])
-        return true;
-      },
-      error => { 
-          alert('asd')
-        }
-      )
+  login(e) {
+    return this.http.post('users/authenticate', e).subscribe(res => {
+      console.log(res);
+      localStorage.setItem('user', JSON.stringify(res));
+      this.userSubject.next(res);
+      // return res;
+      this.router.navigate(['/'])
+      return true;
+    },
+      error => {
+        alert('asd')
+      }
+    )
   }
 }
 

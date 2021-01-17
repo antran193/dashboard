@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from 'src/app/share/layout/login/login.component';
-import { YourGuardGuard } from '../service/your-guard.guard';
+
+
 import { CalendarComponent } from './menu/menucontent/calendar/calendar.component';
 import { CascadeselectComponent } from './menu/menucontent/cascadeselect/cascadeselect.component';
 import { ChartComponent } from './menu/menucontent/chart/chart.component';
@@ -10,7 +10,7 @@ import { MessagesComponent } from './menu/menucontent/messages/messages.componen
 import { SplitterComponent } from './menu/menucontent/splitter/splitter.component';
 import { TableComponent } from './menu/menucontent/table/table.component';
 import { ToastComponent } from './menu/menucontent/toast/toast.component';
-import { YourguardComponent } from './menu/menucontent/yourguard/yourguard.component';
+
 
 const routes: Routes = [{
   path: 'galleria', component: GalleriaautoComponent
@@ -37,11 +37,6 @@ const routes: Routes = [{
   path: 'calendar', component: CalendarComponent
 },
 
-{
-  path: '/test-guard',
-  component: YourguardComponent,
-  canActivate: [YourGuardGuard],
-},
 // {
 //   path: '/login', component: LoginComponent, children: [
 //     {

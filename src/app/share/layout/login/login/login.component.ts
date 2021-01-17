@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AuthenticationService } from '../../service/authen/authentication.service';
+import { AuthenticationService } from '../../../service/authen/authentication.service';
 import { first } from 'rxjs/operators';
 
 @Component({
@@ -14,7 +14,10 @@ export class LoginComponent implements OnInit {
   error ='adas';
   returnUrl: string;
 
-  constructor(private loginservice: AuthenticationService, private router: Router, private route: ActivatedRoute,) { }
+  constructor(
+    private loginservice: AuthenticationService,
+    private router: Router,
+    private route: ActivatedRoute,) { }
   
   ngOnInit(): void {
     // get return url from route parameters or default to '/'

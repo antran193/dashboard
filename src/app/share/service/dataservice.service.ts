@@ -20,13 +20,4 @@ export class DataserviceService {
   {
     return this.http.delete('https://5f6599069385b80016c5f7d2.mockapi.io/api/login/usertable/'+ datadelete.index)
   }
-  // deleteselectuser(datadelete1)
-  // {
-  //   console.log(datadelete1);
-  //   for (let i = 0; i < datadelete1.length; i++) {
-  //     console.log(datadelete1);
-  //     return this.http.delete('https://5f6599069385b80016c5f7d2.mockapi.io/api/login/usertable/' + datadelete1[i].index)
-  //   }
-    
-  // }
 }

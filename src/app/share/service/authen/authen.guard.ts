@@ -12,6 +12,7 @@ export class Guard implements CanActivate {
     private authenticationService: AuthenticationService
   ) { }
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+    // debugger;
     const user = this.authenticationService.uservalue;
     if (user) {
       // logged in so return true
