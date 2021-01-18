@@ -20,6 +20,9 @@ export class ResetpassService {
   getuser() {
     return this.http.get('https://5f6599069385b80016c5f7d2.mockapi.io/api/login/usertable');
   }
+  updatepass(newpass) {
+    return this.http.put('https://5f6599069385b80016c5f7d2.mockapi.io/api/login/usertable/'+ newpass.index, newpass)
+  }
   getuservalue(a) {
     debugger;
     this.userSubject.next(a);
