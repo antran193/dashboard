@@ -32,6 +32,12 @@ import { CalendarComponent } from './menu/menucontent/calendar/calendar.componen
 import {CalendarModule} from 'primeng/calendar';
 import { FormsModule } from '@angular/forms';
 import { ResetpasswordComponent } from './login/resetpassword/resetpassword.component';
+import { BasiclineComponent } from './menu/menucontent/chart/basicline/basicline.component';
+import { PiechartComponent } from './menu/menucontent/chart/piechart/piechart.component';
+import { AreachartComponent } from './menu/menucontent/chart/areachart/areachart.component';
+import { Column3dComponent } from './menu/menucontent/chart/column3d/column3d.component';
+import { BasiccolumnComponent } from './menu/menucontent/chart/basiccolumn/basiccolumn.component';
+import { BubbleComponent } from './menu/menucontent/chart/bubble/bubble.component';
 
 
 
@@ -52,6 +58,12 @@ import { ResetpasswordComponent } from './login/resetpassword/resetpassword.comp
     ToastComponent,
     CalendarComponent,
     ResetpasswordComponent,
+    BasiclineComponent,
+    PiechartComponent,
+    AreachartComponent,
+    Column3dComponent,
+    BasiccolumnComponent,
+    BubbleComponent,
     
   ],
   imports: [

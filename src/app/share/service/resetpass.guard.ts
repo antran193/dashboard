@@ -23,6 +23,7 @@ export class ResetpassGuard implements CanActivate {
     else {
       this.router.navigate(['/forgetpassword'], { queryParams: { returnUrl: state.url } });
       return false;
+      
     }
   }
 }
